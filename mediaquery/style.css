@@ -1,0 +1,64 @@
+@media (min-width: 750px) {
+  .mobilemenu {
+    display: none;
+  }
+  .cabekalho {
+    display: flex;
+    background-color: rgb(95, 24, 161);
+    width: 100vw;
+    height: 200px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .cabekalho ul {
+    color: white;
+    width: 30vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+  }
+  .cabekalho img {
+    width: 8vw;
+    height: 15vh;
+  }
+  body {
+    margin: 0;
+  }
+}
+
+@media (max-width: 749px) {
+  .mobilemenu {
+    display: flex;
+    background-color: rgb(125, 32, 211);
+    width: 100vw;
+    height: 200px;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .mobilemenu img {
+    width: 5vw;
+    height: 5vh;
+  }
+}
+
+/* main {
+    background-image: url("https://media.zenfs.com/es/eluniversal.com.mx/beee1281c0b205ffaee671c0ab188136");
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vh;
+    background-repeat: no-repeat;
+  }
+
+  main h1 {
+    color: white;
+    font-weight: bold;
+  }
+
+  main p {
+    color: white;
+  } */

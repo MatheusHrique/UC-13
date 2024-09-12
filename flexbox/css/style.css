@@ -1,0 +1,47 @@
+.flex-container {
+  display: flex;
+  flex-direction: row-reverse;
+  border: 1px solid grey;
+}
+
+.item1,
+.item2,
+.item3 {
+  width: 50px;
+  height: 50px;
+  background-color: brown;
+  text-align: center; /* centralizar texto */
+  border: 1px solid black;
+  align-content: center; /* centralizar verticalmente */
+}
+
+body {
+  background-color: black;
+}
+
+.flex-container-justify-content {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid grey;
+  justify-content: space-evenly;
+  height: 500px;
+}
+
+.flex-container-align-items {
+  display: flex;
+  flex-direction: row; /* padrão */
+  border: 1px solid grey;
+  justify-content: center;
+  height: 300px;
+  align-items: flex-end;
+}
+
+.flex-container-wrap {
+  display: flex;
+  flex-direction: row-reverse; /* padrão */
+  border: 1px solid grey;
+  justify-content: center;
+  height: 300px;
+  align-items: flex-start;
+  flex-wrap: wrap; /* permite quebra de linhas, tbm tem wrap-reverse que faz coloca a quebra de linhas dos elementos de forma reversa */
+}
