@@ -1,0 +1,62 @@
+body {
+    background: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+}
+
+.divisaotela {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.divisaologin {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    justify-content: center;
+}
+
+/* .divisaologin hr {
+    border-width: 5px solid black;
+} */
+
+.divisaotela img {
+    width: 50vw;
+    height: 100vh;
+}
+
+.segundaMetade {
+    width: 50vw;
+    height: 100vh;
+    align-content: center;
+    padding-left: 15vw;
+}
+
+.segundaMetade a {
+    font-size: small;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.connectWith {
+    width: 20vw;
+    height: 3vh;
+    background-color: antiquewhite;
+    border: 5px solid #535353;
+    border-radius: 10px;
+    align-items: center;
+    align-content: center;
+}
+
+.connectWith img {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#btnEntrar {
+    height: 30px;
+    width: 100px;
+}
