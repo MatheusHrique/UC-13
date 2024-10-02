@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu inicial</title>
-</head>
-<body>
-    Menu inicial
-</body>
+    <link rel="stylesheet" href="./css/menu.css" />
+  </head>
+  <body>
+    <hr>
+      <h1>Menu inicial</h1>
+      <hr>
+      <h2>Delete:</h2>
+      <br />
+      <br />
+      <form id="DeleteForm">
+        <p>ID:</p> <br />
+        <input type="id" name="id" id="id" /> <br />
+        <br />
+        <input type="submit" id="btnDeleteConfirm" /> <br />
+      </form>
+      <br /><br />
+      <hr>
+      <h2>Update:</h2>
+      <br />
+      <br />
+      <form id="UpdateForm">
+        <p>ID:</p> <br />
+        <input type="id" name="id" id="id" /> <br />
+        <br />
+        <p>Endereço de email:</p> <br />
+        <input type="email" name="email" id="email" /> <br />
+        <br />
+        <p>Senha:</p> <br />
+        <input type="password" name="senha" id="senha" /> <br />
+        <br />
+        <input type="submit" id="btnUpdateConfirm" /> <br />
+      </form>
+      <hr>
+    <script src="./js/menu.js"></script>
+  </body>
 </html>
