@@ -7,36 +7,48 @@
     <link rel="stylesheet" href="./css/menu.css" />
   </head>
   <body>
-    <hr>
-      <h1>Menu inicial</h1>
-      <hr>
-      <h2>Delete:</h2>
-      <br />
-      <br />
-      <form id="DeleteForm">
-        <p>ID:</p> <br />
-        <input type="id" name="id" id="id" /> <br />
+    <div class="divisaotela">
+      <div>
+        <hr />
+        <h1>Menu inicial</h1>
+        <hr />
+        <h2>Delete:</h2>
         <br />
-        <input type="submit" id="btnDeleteConfirm" /> <br />
-      </form>
-      <br /><br />
-      <hr>
-      <h2>Update:</h2>
-      <br />
-      <br />
-      <form id="UpdateForm">
-        <p>ID:</p> <br />
-        <input type="id" name="id" id="id" /> <br />
         <br />
-        <p>Endereço de email:</p> <br />
-        <input type="email" name="email" id="email" /> <br />
+        <form id="DeleteForm">
+          <p>ID:</p>
+          <br />
+          <input type="idDelete" name="idDelete" id="idDelete" /> <br />
+          <br />
+          <input type="submit" id="btnDeleteConfirm" /> <br />
+        </form>
+        <br /><br />
+        <hr />
+        <h2>Update:</h2>
         <br />
-        <p>Senha:</p> <br />
-        <input type="password" name="senha" id="senha" /> <br />
         <br />
-        <input type="submit" id="btnUpdateConfirm" /> <br />
-      </form>
-      <hr>
+        <form id="UpdateForm">
+          <p>ID:</p>
+          <br />
+          <input type="idUpdate" name="idUpdate" id="idUpdate" /> <br />
+          <br />
+          <p>Endereço de email:</p>
+          <br />
+          <input type="email" name="email" id="email" /> <br />
+          <br />
+          <p>Senha:</p>
+          <br />
+          <input type="password" name="senha" id="senha" /> <br />
+          <br />
+          <input type="submit" id="btnUpdateConfirm" /> <br />
+        </form>
+        <hr />
+      </div>
+      <div>
+        <ol id="tabela">
+        </ol>
+      </div>
+    </div>
     <script src="./js/menu.js"></script>
   </body>
 </html>
