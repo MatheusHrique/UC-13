@@ -3,9 +3,12 @@ const bodyParser = require("body-parser");
 const mysql = require("mysql2");
 const app = express();
 const cors = require("cors");
-const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt"); // ou const bcrypt = require("bcryptjs"); se não funcionar
 app.use(bodyParser.json());
 
+
+const SECRET_KEY = "segredinho"; // Troque para um segredo seguro
 // Permitir CORS para o frontend no XAMPP (http://localhost)
 app.use(
   cors()
@@ -20,14 +23,18 @@ const db = mysql.createConnection({
   database: "diagweblogin",
 });
 
-app.post("/login", (req, res) => {
+app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const storedHash = () => {
+
     db.query(
       "SELECT password FROM users WHERE email = ?",
       [email],
-      (err, results) => {
+      async (err, results) => {
         if (err) throw err;
+        if(result.length===0 || !(await bcrypt.compare(password, result[0].password))){
+          return res.status(400).send("Email ou senha inválidos");
+        }
         if (results.length > 0) {
           res.sendStatus(200); // Login bem-sucedido
           return results;
@@ -63,17 +70,24 @@ app.post("/register", (req, res) => {
   const { email, password } = req.body;
   const saltRounds = 10; // Número de rounds para salting
 
-  bcrypt.hash(password, saltRounds, (err, hash) => {
-    if (err) throw err;
-    db.query(
-      "INSERT INTO users (email, password) VALUES (?, ?)",
-      [email, hash],
-      (err, result) => {
+  db.query("SELECT * FROM users WHERE email = ?", [email], (err, result) => {
+    if(err) throw err; 
+    if(result.length>0){
+      return res.status(400).send("Usuário já existe");
+    } else {
+      bcrypt.hash(password, saltRounds, (err, hash) => {  // alternativa: const hashedPassword = await bcrypt.hash(password, 10) // Criptografa a senha
         if (err) throw err;
-        res.sendStatus(201); // Usuário registrado com sucesso
-      }
-    );
-  });
+        db.query(
+          "INSERT INTO users (email, password) VALUES (?, ?)",
+          [email, hash],
+          (err, result) => {
+            if (err) throw err;
+            res.sendStatus(201); // Usuário registrado com sucesso
+          }
+        );
+      });
+    }
+  })
 });
 
 app.get("/menu", (req, res) => {
